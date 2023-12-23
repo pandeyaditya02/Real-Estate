@@ -58,7 +58,10 @@ export const deleteUser = async (req, res, next) => {
   }
 };
 
-export const getUserListings=async()=>{
+export const getUserListings=async(req,res,next)=>{
+  console.log(req.user)
+  console.log(req.params)
+
   if(req.user.id== req.params.id)
   {
     try {
