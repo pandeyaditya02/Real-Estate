@@ -129,7 +129,7 @@ export default function Profile() {
       setShowListingsError(false);
       const res = await fetch(`/api/user/listings/${currentUser._id}`);
       const data = await res.json();
-      console.log(data)
+      console.log(data);
       if (data.success === false) {
         return setShowListingsError(data.message);
       }
@@ -294,7 +294,9 @@ export default function Profile() {
                   >
                     Delete
                   </button>
-                  <button className="text-green-700 uppercase">Edit</button>
+                  <Link to={`/update-listing/${listing._id}`}>
+                    <button className="text-green-700 uppercase">Edit</button>
+                  </Link>
                 </div>
               </div>
             );
