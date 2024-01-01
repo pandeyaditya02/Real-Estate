@@ -8,7 +8,7 @@ const Contact = ({ listing }) => {
     setMessage(e.target.value);
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     const fetchLandlord = async () => {
       try {
         const res = await fetch(`/api/user/${listing.userRef}`);
@@ -21,9 +21,10 @@ const Contact = ({ listing }) => {
         console.log(error);
       }
     };
+    
     fetchLandlord();
   }, [listing.userRef]);
-
+  
   return (
     <>
       {landlord && (

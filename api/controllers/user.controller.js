@@ -75,7 +75,7 @@ export const getUserListings = async (req, res, next) => {
 export const getUser = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
-    // console.log('here')
+    // console.log(user)
     if (!user) {
       next(errorHandler(404, "User not found!"));
     }
