@@ -11,13 +11,17 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
+    // console.log(window.location.search);
+    // console.log(urlParams);
     urlParams.set("searchTerm", searchTerm);
     urlParams.toString();
     navigate(`/search?${urlParams}`);
   };
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
+    const urlParams = new URLSearchParams(window.location.search);
+    // console.log(location.search);
+    // console.log(urlParams);
     const searchTermFromUrl = urlParams.get("searchTerm");
     if (searchTermFromUrl) {
       setSearchTerm(searchTermFromUrl);
